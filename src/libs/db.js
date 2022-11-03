@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 import _ from 'underscore'
 import * as models from '../models'
-
+  
 exports.schema = (config = {}, name = 'default') => {
     if (typeof global.schemas == 'undefined') {
         global.schemas = {}

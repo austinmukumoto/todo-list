@@ -3,11 +3,10 @@ import _ from "underscore";
 import { model } from "../libs/db";
 import { statusCode } from "../constant/statusCode"
 import { format } from "date-fns"
-import { encrypt,decrypt } from "../libs/crypto"
+import { decrypt } from "../libs/crypto"
 import exception from "../libs/exception"
 import jwt from "jsonwebtoken"
 import Validator from "validatorjs"
-import jwt_decode from "jwt-decode"
 
 
 exports.create = async (request, response, next) => {
@@ -42,14 +41,11 @@ exports.create = async (request, response, next) => {
             return response.status(statusCode.UNAUTHORIZED).send(exception("Unauthorized user", 1, 401));
         }
 
-
         const token = jwt.sign(
             { username: Users.username, key: Users.Uid },
             process.env.APP_KEY || '123',
             { expiresIn: "3600s" }
         );
-
-        console.log(jwt_decode(token))
 
         const expiresAt = new Date(); expiresAt.setMinutes(expiresAt.getMinutes() + process.env.TOKEN_TTL_MINUTES || 60)
 

@@ -11,9 +11,7 @@ export default async (request, response, next) => {
     }
 
     const auth = jwtDecode(request.headers.authorization)
-
-
-
+    
     // GET VALID USERS
     try {
         let Users = await model('Users').findOne({

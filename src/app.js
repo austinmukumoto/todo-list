@@ -16,4 +16,7 @@ app.use(cors())
 app.use("/v1/api/todos", AuthMiddleware); 
 app.use("/v1/api", routes)
 
+const port = process.env.HOST_PORT || 5000
+app.listen(port)
+
 export default app
