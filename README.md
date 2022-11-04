@@ -26,5 +26,5 @@ $ Run "npm run start"
 
 ## Testing
 * npm run test - run all test case 
-* npm run test tets/{filename} -- forceExit - rull specific test case
+* npm run test tets/{filename} -- forceExit - run specific test case
 
