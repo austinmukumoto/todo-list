@@ -16,6 +16,7 @@ a Rest API made by Express Node JS supported by Sequelize package and etc
 ```
 $ Clone the project
 $ Execute "npm i/npm install to get node modules"
+$ Run "npm run build"
 $ Run "npm run start"
 ```
 
